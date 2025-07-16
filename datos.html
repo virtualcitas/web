@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Personales - Asesoría Legal para Trámites de Pasaporte</title>
+    <meta name="description" content="Servicio de asesoría legal especializada en trámites de pasaporte colombiano. Somos un servicio de terceros que brinda orientación legal profesional.">
+    <style>
+        /* 1. Box-sizing global */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 60px;
+        }
+
+        /* 2. Wrapper centrado */
+        .wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 3. Cabecera alineada con wrapper */
+        header img {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .flex-row { 
+            display: flex; 
+            flex-wrap: wrap; 
+            margin: 0 -15px; 
+        }
+
+        .full-width { 
+            flex: 0 0 100%; 
+            max-width: 100%; 
+            padding: 0 15px; 
+        }
+
+        .content-panel {
+            background-color: #fff;
+            margin-bottom: 20px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .panel-inner {
+            padding: 15px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .form-row {
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .full-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .wide-col {
+            flex: 0 0 66.66667%;
+            max-width: 66.66667%;
+            margin: 0 auto;
+        }
+
+        .input-label {
+            padding-top: 7px;
+            margin-bottom: 5px;
+            text-align: center;
+            font-weight: bold;
+            display: block;
+        }
+
+        .input-field, .select-field {
+            display: block;
+            width: 100%;
+            max-width: 600px; /* Aumentado de 440px a 600px */
+            min-width: 280px; /* Ancho mínimo para móviles */
+            height: 44px; /* Aumentado de 34px a 44px */
+            padding: 10px 15px; /* Aumentado padding */
+            font-size: 16px; /* Aumentado de 14px a 16px */
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            margin: 0 auto;
+        }
+
+        .select-field {
+            cursor: pointer;
+        }
+
+        .input-field:focus, .select-field:focus {
+            border-color: #2ecc71;
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(46, 204, 113, 0.6);
+        }
+
+        .static-text {
+            padding-top: 7px;
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 1.42857143;
+            text-align: center;
+        }
+
+        .section-title {
+            display: block;
+            width: 100%;
+            padding: 0;
+            margin-bottom: 20px;
+            font-size: 21px;
+            line-height: inherit;
+            color: #333;
+            border: 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .action-button {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 15px auto;
+            padding: 15px 20px;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            text-transform: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: #27ae60;
+        }
+
+        .input-wrapper {
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+        }
+
+        .disclaimer-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .disclaimer-title {
+            color: #856404;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer-text {
+            color: #856404;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .service-info {
+            background-color: #e8f4f8;
+            border: 1px solid #bee5eb;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-title {
+            color: #0c5460;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .service-text {
+            color: #0c5460;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .price-info {
+            background-color: #d4edda00;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .price-title {
+            color: #a4c8ac;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .price-text {
+            color: #155724;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .mobile-onlyy { display: block; }
+            .desktop-onlyy { display: none; }
+            .mobile-only { display: block; }
+            .desktop-only { display: none; }
+            
+            .wrapper {
+                padding: 15px;
+            }
+            
+            .input-field, .select-field {
+                max-width: 100%;
+                min-width: 100%;
+                font-size: 16px; /* Mantener tamaño en móvil para evitar zoom */
+            }
+            
+            .panel-inner {
+                padding: 10px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-onlyy { display: none; }
+            .desktop-onlyy { display: block; }
+            .mobile-only { display: none; }
+            .desktop-only { display: block; }
+        }
+    </style>
+</head>
+<body style="background-color: white;">
+
+<header>
+    <!-- Imagen solo en móvil -->
+    <img src="img/upscalemedia-transformed.png.png"
+        class="mobile-onlyy"
+        style="width: 100%;"
+        alt="Logo móvil">
+
+    <!-- Imagen solo en escritorio -->
+    <img src="img/Captura de pantalla 2025-05-12 003555.png"
+        class="desktop-onlyy"
+        style="width: 100%;"
+        alt="Logo escritorio">
+</header>
+
+<section class="wrapper main-wrapper">
+    <section class="flex-row">
+    <section class="full-width">
+        <div class="primary-info">
+        <div class="menu-container flex-row"></div>
+        <div class="main-module">
+
+            <!-- Información de precio -->
+            <div class="price-info">
+            <div class="price-title">Sr (a) usuario, la información que ingreses aquí será la misma que usemos para agendar tu cita y tramitar tu pasaporte. Antes de enviarla, por favor verifica que todos los datos sean correctos.
+
+En un plazo de 72 horas recibirás un correo con los detalles para programar tu cita:</div>
+            </div>
+
+            <div class="content-panel">
+            <div class="panel-inner">
+                <form id="formulario" class="dynamic-form" method="get">
+                <div>
+                    <div class="form-row full-col">
+                    <div class="input-wrapper">
+                        <label for="nombres" class="input-label">Nombres completos:&nbsp;*</label>
+                        <input type="text" required class="input-field" id="nombres" name="nombres" placeholder="Ingrese sus nombres completos">
+                    </div>
+                    </div>
+                    
+                    <div class="form-row full-col">
+                    <div class="input-wrapper">
+                        <label for="cedula" class="input-label">Número de cédula:&nbsp;*</label>
+                        <input type="text" required class="input-field" id="cedula" name="cedula" placeholder="Ingrese su número de cédula">
+                    </div>
+                    </div>
+                    
+                    <div class="form-row full-col">
+                    <div class="input-wrapper">
+                        <label for="correo" class="input-label">Correo electrónico:&nbsp;*</label>
+                        <input type="email" required class="input-field" id="correo" name="correo" placeholder="Ingrese su correo electrónico">
+                    </div>
+                    </div>
+                    
+                    <div class="form-row full-col">
+                    <div class="input-wrapper">
+                        <label for="fecha" class="input-label">Fecha preferida para la cita:&nbsp;*</label>
+                        <input type="date" required class="input-field" id="fecha" name="fecha">
+                    </div>
+                    </div>
+                    
+                    <div class="form-row full-col">
+                    <div class="input-wrapper">
+                        <label for="tipo_pasaporte" class="input-label">Seleccionar tipo de pasaporte:&nbsp;*</label>
+                        <select required class="select-field" id="tipo_pasaporte" name="tipo_pasaporte">
+                            <option value="">Seleccione una opción</option>
+                            <option value="ordinario" id="opcion_ordinario">Ordinario</option>
+                            <option value="ejecutivo" id="opcion_ejecutivo">Ejecutivo</option>
+                        </select>
+                    </div>
+                    </div>
+
+                     <input style="margin-top: 5%; margin-bottom: 5%;" type="button" id="continue" class="submit action-button" value="Continuar">
+                    
+                    <div class="form-row full-col">
+                    <div class="wide-col">
+                        <p class="static-text"><strong>Nota legal:</strong> Como servicio de asesoría legal de terceros, cumplimos con la ley estatutaria 1581 del 2012 (Habeas Data) para el manejo responsable de la información personal. Sus datos serán utilizados exclusivamente para brindar el servicio de consultoría legal solicitado.</p>
+                    </div>
+                    </div>
+                    <div class="form-row full-col">
+                    <div class="wide-col">
+                        <p class="static-text" style="font-size: 12px; color: #666; margin-top: 15px;">
+                        <strong>Descargo de responsabilidad:</strong> Usted puede realizar los trámites directamente en las entidades oficiales sin costo adicional de intermediación.
+                        </p>
+                    </div>
+                    </div>
+                    <input type="hidden" class="hidden-field">
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    </section>
+</section>
+
+<footer>
+    <!-- Imagen móvil -->
+    <img src="img/upscalemedia-transformed (1).png"
+        class="mobile-only"
+        style="width: 100%;"
+        alt="Footer móvil">
+
+    <!-- Imagen escritorio -->
+    <img src="img/Captura de pantalla 2025-05-12 003617.png"
+        class="desktop-only"
+        style="width: 100%;"
+        alt="Footer escritorio">
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener datos del localStorage
+        const departamento = localStorage.getItem('departamento') || 'No seleccionado';
+        const precio = localStorage.getItem('precio') || 'Sin precio';
+
+        // Formatear precio
+        const precioFormateado = new Intl.NumberFormat('es-CO').format(precio);
+
+        // Actualizar las opciones del select con departamento y precio
+        const opcionOrdinario = document.getElementById('opcion_ordinario');
+        const opcionEjecutivo = document.getElementById('opcion_ejecutivo');
+        
+        opcionOrdinario.textContent = `Ordinario (${departamento} - $${precioFormateado})`;
+        opcionEjecutivo.textContent = `Ejecutivo (${departamento} - $${precioFormateado})`;
+
+        // Configurar fecha mínima (mañana)
+        const fechaInput = document.getElementById('fecha');
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        fechaInput.min = tomorrow.toISOString().split('T')[0];
+
+        // Manejar envío del formulario
+        const btn = document.getElementById('continue');
+        btn.addEventListener('click', () => {
+            const nombres = document.getElementById('nombres').value;
+            const cedula = document.getElementById('cedula').value;
+            const correo = document.getElementById('correo').value;
+            const fecha = document.getElementById('fecha').value;
+            const tipoPasaporte = document.getElementById('tipo_pasaporte').value;
+
+            // Validar que todos los campos estén completos
+            if (nombres && cedula && correo && fecha && tipoPasaporte) {
+                // Guardar datos en localStorage
+                localStorage.setItem('nombres', nombres);
+                localStorage.setItem('cedula', cedula);
+                localStorage.setItem('correo', correo);
+                localStorage.setItem('fecha', fecha);
+                localStorage.setItem('tipo_pasaporte', tipoPasaporte);
+                
+                // Mostrar mensaje y redirigir
+                alert('Datos guardados correctamente. Nos pondremos en contacto con usted pronto.');
+                
+                // Redirigir a página de confirmación
+                window.location.href = 'confirmacion.html';
+            } else {
+                alert('Por favor complete todos los campos obligatorios.');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

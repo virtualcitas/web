@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesoría Legal para Trámites de Pasaporte - Servicio de Terceros</title>
+    <meta name="description" content="Servicio de asesoría legal especializada en trámites de pasaporte colombiano. Somos un servicio de terceros que brinda orientación legal profesional.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        .full-width {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0 15px;
+        }
+        .content-panel {
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .panel-inner {
+            padding: 15px;
+        }
+        .form-row {
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .full-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+        .half-col {
+            flex: 0 0 50%;
+            max-width: 50%;
+            text-align: center;
+        }
+        .wide-col {
+            flex: 0 0 66.66667%;
+            max-width: 66.66667%;
+            margin: 0 auto;
+        }
+        .input-label {
+            padding-top: 7px;
+            margin-bottom: 5px;
+            text-align: center;
+            font-weight: bold;
+            display: block;
+        }
+        .select-box {
+            display: block;
+            width: 100%;
+            max-width: 440px;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            margin: 0 auto;
+        }
+        .static-text {
+            padding-top: 7px;
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 1.42857143;
+            text-align: center;
+        }
+        select.select-box {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 8px 10px;
+            padding-right: 1.5rem;
+        }
+        .section-title {
+            display: block;
+            width: 100%;
+            padding: 0;
+            margin-bottom: 20px;
+            font-size: 21px;
+            line-height: inherit;
+            color: #333;
+            border: 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .action-button {
+            display: block;
+            width: 310px;
+            margin: 15px auto;
+            padding: 12px 20px;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            text-transform: none;
+        }
+        .action-button:hover {
+            background-color: #27ae60;
+        }
+        strong {
+            font-weight: bold;
+        }
+        .alert-text {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .select-wrapper {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 440px;
+        }
+        /* 1. Box-sizing global */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Wrapper centrado */
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 3. Cabecera alineada con wrapper (opción B) */
+header img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.flex-row { display: flex; flex-wrap: wrap; margin: 0 -15px; }
+.full-width { flex: 0 0 100%; max-width: 100%; padding: 0 15px; }
+.content-panel {
+  background-color: #fff;
+  margin-bottom: 20px;
+  /* que no se desborde */
+  max-width: 100%;
+  overflow: hidden;
+}
+.panel-inner {
+  padding: 15px;
+  /* que no se desborde */
+  max-width: 100%;
+  overflow: hidden;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* opcional: fondo, padding, etc. */
+  background: white;
+  z-index: 1000;
+}
+body {
+  /* para que el contenido no quede oculto por el footer */
+  padding-bottom: /* altura de tu footer */ 60px;
+}
+
+.disclaimer-box {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.disclaimer-title {
+  color: #856404;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.disclaimer-text {
+  color: #856404;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.service-info {
+  background-color: #e8f4f845;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;   
+}
+
+.service-title {
+  color: #0c53602f;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.service-text {
+  color: #0c53602f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+    </style>
+</head>
+<body style="background-color: white;">
+
+  <header>
+    <!-- Imagen solo en móvil -->
+    <img src="img/upscalemedia-transformed.png.png"
+         class="mobile-onlyy"
+         style="width: 100%;"
+         alt="Logo móvil">
+
+    <!-- Imagen solo en escritorio -->
+    <img src="img/Captura de pantalla 2025-05-12 003555.png"
+         class="desktop-onlyy"
+         style="width: 100%;"
+         alt="Logo escritorio">
+  </header>
+
+  <style>
+    .mobile-onlyy  { display: none; }
+    .desktop-onlyy { display: block; }
+    @media (max-width: 768px) {
+      .mobile-onlyy  { display: block; }
+      .desktop-onlyy { display: none; }
+    }
+  </style>
+
+  <section class="wrapper main-wrapper">
+    <section class="flex-row">
+      <section class="full-width">
+        <div class="primary-info">
+          <div class="menu-container flex-row"></div>
+          <div class="main-module">
+
+            <div class="content-panel">
+              <div class="panel-inner">
+                <form id="formulario" class="dynamic-form" method="get">
+                  <div>
+                    <div class="form-row full-col">
+                      <div class="select-wrapper">
+                        <label for="departamentos" class="input-label">Seleccione su departamento:&nbsp;*</label>
+                        <select required class="select-box" id="departamentos">
+                          <option selected disabled value="">Seleccione...</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-row full-col">
+                      <div class="wide-col">
+                        <p class="static-text"><strong>Nota legal:</strong> Como servicio de asesoría legal de terceros, cumplimos con la ley estatutaria 1581 del 2012 (Habeas Data) para el manejo responsable de la información personal. Sus datos serán utilizados exclusivamente para brindar el servicio de consultoría legal solicitado.</p>
+                      </div>
+                    </div>
+                    <div class="form-row full-col">
+                      <div class="wide-col">
+                        <p class="static-text" style="font-size: 12px; color: #666; margin-top: 15px;">
+                          <strong>Descargo de responsabilidad:</strong>Usted puede realizar los trámites directamente en las entidades oficiales sin costo adicional de intermediación.
+                        </p>
+                      </div>
+                    </div>
+                    <input type="hidden" class="hidden-field">
+                    <input type="button" id="continue" class="submit action-button" value="Continuar">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+             <!-- Información del servicio -->
+            <div class="service-info">
+              <div class="service-title">SERVICIO DE ASESORÍA LEGAL ESPECIALIZADA</div>
+              <div class="service-text">
+                Ofrecemos orientación legal profesional para el proceso de solicitud de documentos de identidad. Nuestro servicio incluye consultoría jurídica, revisión de documentos, orientación sobre requisitos y acompañamiento en el proceso administrativo.
+              </div>
+            </div>  
+      </section>
+    </section>
+  </section>
+
+  <footer>
+    <!-- Imagen móvil -->
+    <img src="img/upscalemedia-transformed (1).png"
+         class="mobile-only"
+         style="width: 100%;"
+         alt="Footer móvil">
+
+    <!-- Imagen escritorio -->
+    <img src="img/Captura de pantalla 2025-05-12 003617.png"
+         class="desktop-only"
+         style="width: 100%;"
+         alt="Footer escritorio">
+  </footer>
+
+  <style>
+    .mobile-only  { display: none; }
+    .desktop-only { display: block; }
+    @media (max-width: 768px) {
+      .mobile-only  { display: block; }
+      .desktop-only { display: none; }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const departamentos = [
+        "AMAZONAS","ANTIOQUIA","ARAUCA","ATLÁNTICO","BOLÍVAR","BOYACÁ","CALDAS","CAQUETÁ","CASANARE","CAUCA","CESAR","CHOCÓ","CÓRDOBA","CUNDINAMARCA","GUANÍA","GUAVIARE","HUILA","LA GUAJIRA","MAGDALENA","META","NARIÑO","NORTE DE SANTANDER","PUTUMAYO","QUINDÍO","RISARALDA","SAN ANDRÉS","SANTANDER","SUCRE","TOLIMA","VALLE DEL CAUCA","VAUPÉS","VICHADA"
+      ];
+
+      // Honorarios de asesoría legal por departamento
+      const honorarios = {
+        "AMAZONAS": 237206,
+        "ANTIOQUIA": 294000,
+        "ARAUCA": 257000,
+        "ATLÁNTICO": 250068,
+        "BOLÍVAR": 234470,
+        "BOYACÁ": 228000,
+        "CALDAS": 310500,
+        "CAQUETÁ": 226000,
+        "CASANARE": 235799,
+        "CAUCA": 276000,
+        "CESAR": 297000,
+        "CHOCÓ": 286551,
+        "CÓRDOBA": 261000,
+        "HUILA": 253200,
+        "LA GUAJIRA": 258247,
+        "MAGDALENA": 207000,
+        "META": 260800,
+        "NARIÑO": 297900,
+        "NORTE DE SANTANDER": 358350,
+        "PUTUMAYO": 315000,
+        "QUINDÍO": 344800,
+        "RISARALDA": 232000,
+        "SAN ANDRÉS": 232000,
+        "SANTANDER": 295598,
+        "SUCRE": 305300,
+        "TOLIMA": 234542,
+        "VALLE DEL CAUCA": 333000,
+        "VICHADA": 257200,
+        "DEFAULT": 186000
+      };
+
+      const select = document.getElementById('departamentos');
+      const btn = document.getElementById('continue');
+
+      departamentos.forEach(dep => {
+        const opt = document.createElement('option');
+        opt.value = dep;
+        opt.textContent = dep;
+        select.appendChild(opt);
+      });
+
+      btn.addEventListener('click', () => {
+        const sel = select.value;
+        if (sel) {
+          // Guardar en localStorage
+          localStorage.setItem('departamento', sel);
+          const honorario = honorarios[sel] || honorarios.DEFAULT;
+          localStorage.setItem('precio', honorario);
+          // Ir a la siguiente página
+          window.location.href = 'datos.html';
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
